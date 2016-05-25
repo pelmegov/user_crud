@@ -42,7 +42,13 @@
         </div>
 
         <div class="col-xs-5">
-            <h1>Add User</h1>
+
+            <c:if test="${!empty user.firstName}">
+                <h1>Edit User</h1>
+            </c:if>
+            <c:if test="${empty user.firstName}">
+                <h1>Add User</h1>
+            </c:if>
 
             <c:url var="addAction" value="/index/add"/>
 
